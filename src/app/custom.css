@@ -1,0 +1,141 @@
+/**
+ * Custom CSS overrides
+ * Add rules here to overwrite default styles.
+ */
+ 
+h1 {
+  font-size: 57px;
+  line-height: 120%;
+}
+ 
+h2 {
+  font-size: 42px;
+  line-height: 120%;
+}
+ 
+h3 {
+  font-size: 22px;
+  line-height: 150%;
+}
+ 
+h4 {
+  font-size: 20px;
+  line-height: 150%;
+}
+ 
+/* h5 {
+  font-size: 20px;
+  line-height: 150%;
+} */
+ 
+p {
+  font-size: 18px;
+  line-height: 150%;
+}
+ 
+body {
+  font-size: 16px;
+  line-height: 150%;
+}
+ 
+/* span {
+  font-size: 16px;
+  line-height: 150%;
+} */
+ 
+/* Waste categories section background - avoid Tailwind arbitrary value parse error */
+.waste-category-section-bg {
+  background-image: url("/wastecategorybg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+ 
+/* Product page hero - subtle circuit/network pattern on dark green */
+.product-page-hero-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(218, 230, 220, 0.12) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+ 
+.product-page-hero-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.08) 100%);
+  pointer-events: none;
+}
+ 
+/* Mobile/Tablet Breakpoint (max-width: 767px) - Matches Tailwind 'md' breakpoint */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 38px;
+    line-height: 120%;
+  }
+ 
+  h2 {
+    font-size: 32px;
+    line-height: 120%;
+  }
+ 
+  h3 {
+    font-size: 20px;
+    line-height: 150%;
+  }
+ 
+  h4 {
+    font-size: 18px;
+    line-height: 150%;
+  }
+ 
+  /* h5 {
+    font-size: 20px;
+    line-height: 150%;
+  } */
+ 
+  p {
+    font-size: 16px;
+    line-height: 150%;
+  }
+ 
+  body {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+ 
+/* Extra Small Screens (max-width: 320px) */
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 35px;
+    line-height: 120%;
+  }
+ 
+  h2 {
+    font-size: 30px;
+    line-height: 120%;
+  }
+ 
+  h3 {
+    font-size: 18px;
+    line-height: 150%;
+  }
+ 
+  h4 {
+    font-size: 16px;
+    line-height: 150%;
+  }
+ 
+  /*  h5 {
+    font-size: 20px;
+    line-height: 150%;
+  } */
+ 
+  p {
+    font-size: 14px;
+    line-height: 150%;
+  }
+ 
+  body {
+    font-size: 12px;
+    line-height: 150%;
+  }
+}

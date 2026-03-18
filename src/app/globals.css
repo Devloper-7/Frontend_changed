@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* --background: #ffffff; */
+  /* --foreground: #171717; */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-lexend: var(--font-lexend);
+  --font-outfit: var(--font-outfit);
+  --font-jakarta: var(--font-jakarta);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --background: #0a0a0a; */
+    /* --foreground: #ededed; */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Lexend Deca", sans-serif;
+  background-color: #fff; 
+}
+
+/* Biomket brand */
+:root {
+  --biomket-green: #1a5f4a;
+  --biomket-teal: #2d9d7a;
+  --biomket-bg-light: #e8f5f0;
+}
+
+/* Mobile menu subtle circuit-style pattern */
+.navbar-mobile-pattern {
+  background-color: #fff;
+  background-image: radial-gradient(circle at 1px 1px, rgba(45, 157, 122, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+
+.bg-biomket-gradient {
+  background-color: #053F31;
+  background-image: 
+    radial-gradient(circle at 100% 0%, rgba(247, 250, 248, 0.2) 1px, transparent 50%),
+    radial-gradient(circle at 0% 100%, rgba(247, 250, 248, 0.2) 1px, transparent 50%);
+}
+
+
+/* Custom slim scrollbar - no arrows, track + thumb only (light grey) */
+.scroll-green {
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: #053F31 #E6F0E8;
+}
+
+.scroll-green::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-green::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+/* No arrow buttons - thumb and track only */
+.scroll-green::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0;
+  height: 0;
+}
+
+.scroll-green::-webkit-scrollbar-thumb {
+  background-color: #c5c5c5;
+  border-radius: 3px;
+}
+
+.scroll-green::-webkit-scrollbar-thumb:hover {
+  background-color: #a8a8a8;
+}
+
+.range-green {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  outline: none;
+  background: #E6EEE9;
+}
+
+/* Track */
+.range-green::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+}
+
+/* Thumb (BIG circle like image 2) */
+.range-green::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #053F31;
+  border: 4px solid #DAE6DC; /* white ring */
+  box-shadow: 0 0 0 3px #053F31;
+  cursor: pointer;
+  margin-top: -6px; /* centers thumb vertically */
+}
+
+/* Firefox */
+.range-green::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #053F31;
+  border: 4px solid #F7FAF8;
+  box-shadow: 0 0 0 2px #053F31;
+  cursor: pointer;
+}
