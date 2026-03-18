@@ -64,9 +64,10 @@ const HowToInterpretLer = () => {
     return (
         <section
             ref={sectionRef}
-            className={`rounded-[20px] bg-[#053F31] text-white py-16 px-[20px] md:py-[50px] md:px-[214px] relative overflow-hidden font-outfit mb-[70px] sm:mb-[130px] ${inView ? "interpret-ler-in" : ""}`}
+            className={`rounded-[20px] bg-[#053F31] text-white py-16 px-[20px] md:py-[50px] md:px-[214px] relative overflow-hidden font-outfit mb-[70px] ${inView ? "interpret-ler-in" : ""}`}
         >
-            <style dangerouslySetInnerHTML={{ __html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .interpret-ler-step { opacity: 0; }
                 .interpret-ler-in .interpret-ler-step {
                     animation: interpret-ler-fade-in 0.55s ease-out forwards;

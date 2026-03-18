@@ -49,9 +49,10 @@ const SectorServe = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-hidden rounded-[20px] p-[20px] md:p-[50px] mb-[70px] sm:mb-[130px] ${inView ? "sector-serve-in" : ""}`}
+      className={`relative overflow-hidden rounded-[20px] p-[20px] md:p-[50px] mb-[70px] ${inView ? "sector-serve-in" : ""}`}
     >
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .sector-serve-step { opacity: 0; }
         .sector-serve-in .sector-serve-step {
           animation: sector-serve-slide-in 0.6s ease-out forwards;

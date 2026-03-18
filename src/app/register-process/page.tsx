@@ -207,7 +207,7 @@ export default function RegisterProcessPage() {
   const activeCount = ACTIVE_COUNT_BY_SECTION[currentSection] ?? 4;
 
   return (
-    <main className="min-h-screen font-outfit  relative px-[20px] md:px-[40px] xl:max-w-[1440px] 2xl:max-w-[1920px]">
+    <main className="min-h-screen font-outfit  relative px-[20px] md:px-[60px] xl:max-w-[1440px] 2xl:max-w-[1920px]">
       <BackgroundGradients count={REGISTER_PROCESS_ZIGZAG_COUNT} />
       {/* Progress indicator – pill-shaped bar. Active = bright white + glow; inactive = faded teal. Connectors white before active, faded before inactive. */}
       <div className=" pt-4 md:pt-6 ">

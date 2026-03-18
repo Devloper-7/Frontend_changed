@@ -32,9 +32,10 @@ export default function WhatAreEWCCodes() {
   return (
     <section
       ref={sectionRef}
-      className={`w-full mx-auto mb-[70px] sm:mb-[130px] font-outfit  ${inView ? "what-ewc-in" : ""}`}
+      className={`w-full mx-auto mb-[70px] font-outfit  ${inView ? "what-ewc-in" : ""}`}
     >
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .what-ewc-row1 { opacity: 0; }
         .what-ewc-row2 { opacity: 0; }
         .what-ewc-in .what-ewc-row1 {

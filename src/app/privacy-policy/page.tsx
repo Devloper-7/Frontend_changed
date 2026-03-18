@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export default function PrivacyPolicyPage() {
 
   return (
-    <main className="px-[20px] md:px-[40px]">
+    <main className="px-[20px] md:px-[60px]">
       <ContactHero
         headline={
           <h1 className="font-extralight text-white font-lexend leading-tight">
@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         showSearch={false}
       />
 
-      <div className="mb-[70px] sm:mb-[130px] max-w-[1840px] mx-auto font-outfit">
+      <div className="mb-[70px] max-w-[1840px] mx-auto font-outfit">
 
         <div className="bg-[#F7FAF8] rounded-[20px] border border-[#053F31]/20 p-[30px] font-medium text-[20px] leading-[150%] text-[#000000]">
 
@@ -153,7 +153,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
 
-      <Footer/>
+      <Footer />
     </main>
   );
 }

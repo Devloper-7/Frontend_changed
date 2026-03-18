@@ -8,7 +8,7 @@ const LOGIN_ZIGZAG_COUNT = 2;
 export default function LoginPage() {
   return (
     <>
-      <main className="px-[20px] md:px-[40px]">
+      <main className="px-[20px] md:px-[60px]">
         <ContactHero headline={
           <h1 className="font-lexend font-extralight text-white ">
             Don't have an <span className="font-medium">account yet?</span>

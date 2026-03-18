@@ -17,11 +17,11 @@ function CheckoutContent() {
 
   return (
     <>
-    <CheckoutPage productId={productId} productTitle={productTitle} />
-    <BackgroundGradients count={CHECKOUT_ZIGZAG_COUNT} />
-    <div className="px-[20px] md:px-[40px]">
-    <Footer />
-    </div>
+      <CheckoutPage productId={productId} productTitle={productTitle} />
+      <BackgroundGradients count={CHECKOUT_ZIGZAG_COUNT} />
+      <div className="px-[20px] md:px-[60px]">
+        <Footer />
+      </div>
     </>
   );
 }

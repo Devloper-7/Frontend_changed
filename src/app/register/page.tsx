@@ -9,7 +9,7 @@ export default function Register() {
     return (
         <>
             {/* <RegisterPage /> */}
-            <main className="min-h-screen px-[20px] md:px-[40px] font-outfit">
+            <main className="min-h-screen px-[20px] md:px-[60px] font-outfit">
                 <ContactHero headline={
                     <h1 className="font-lexend font-extralight text-white leading-tight">
                         Join <span className="font-medium">BIOMKET</span>

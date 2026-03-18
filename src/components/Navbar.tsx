@@ -172,7 +172,7 @@ export default function Navbar() {
                         <>
                             <div className="w-full">
                                 <div className="relative flex h-10 items-center justify-between">
-                                    <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+                                    <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                                         {/* Mobile menu button */}
                                         <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md text-gray-400 p-2">
                                             <span className="sr-only">Open main menu</span>
@@ -195,14 +195,14 @@ export default function Navbar() {
                                         <div className="flex items-center shrink-0">
                                             <Link href="/">
 
-                                                <img src="/logobiom.png" alt="biomket_logo" className="h-[45px]"/>
+                                                <img src="/logobiom.png" alt="biomket_logo" className="h-[45px]" />
                                                 {/* <IconCompanyLogo /> */}
 
                                             </Link>
                                         </div>
 
                                         {/* CENTER: Navigation */}
-                                        <div className="hidden sm:flex space-x-[30px]">
+                                        <div className="hidden lg:flex space-x-[30px]">
                                             {navigation.map((item) => {
                                                 const isActive = item.href === "/" ? pathname === "/" : (pathname === item.href || pathname.startsWith(item.href + "/"));
                                                 return (
@@ -223,7 +223,7 @@ export default function Navbar() {
 
                                         {/* RIGHT: Auth */}
                                         {/* RIGHT: Auth or Profile Dropdown */}
-                                        <div className="hidden sm:flex items-center text-emerald-700 font-outfit gap-[15px]">
+                                        <div className="hidden lg:flex items-center text-emerald-700 font-outfit gap-[15px]">
                                             {isLoggedIn ? (
                                                 <>
                                                     <Link href="/cart" className="relative p-1 rounded-md hover:opacity-90 transition-opacity" aria-label="Cart">
@@ -283,7 +283,7 @@ export default function Navbar() {
                             </div>
 
                             {/* DisclosurePanel - Full Screen Mobile Menu */}
-                            <DisclosurePanel className="sm:hidden fixed inset-0 z-50 bg-white ">
+                            <DisclosurePanel className="lg:hidden fixed inset-0 z-50 bg-white ">
                                 <div className="relative flex h-full flex-col">
                                     {/* 1. BACKGROUND IMAGE */}
                                     <div className="absolute bottom-0 left-0 right-0 h-1/2 z-0 pointer-events-none">

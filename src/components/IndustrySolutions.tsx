@@ -95,7 +95,7 @@ const IndustrySolutions = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className={`bg-transparent mx-[20px] md:mx-0 font-outfit my-[70px] sm:mb-[130px] ${inView ? "industry-solutions-in" : ""}`}>
+        <section ref={sectionRef} className={`bg-transparent font-outfit my-[70px] ${inView ? "industry-solutions-in" : ""}`}>
             <style dangerouslySetInnerHTML={{ __html: `
                 .industry-solutions-step { opacity: 0; }
                 .industry-solutions-in .industry-solutions-step {
@@ -109,8 +109,8 @@ const IndustrySolutions = () => {
             <div className="xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
 
                 {/* Section Header */}
-                <div className="text-center mb-[40px]">
-                    <h2 className="leading-tight text-black font-extralight mb-[20px] font-lexend">
+                <div className="text-center mb-[30px]">
+                    <h2 className="leading-tight text-black font-extralight mb-[10px] font-lexend">
                         Industry <span className="font-medium">Solutions</span>
                     </h2>
                     <p className="text-[#424242] font-light">
@@ -119,7 +119,7 @@ const IndustrySolutions = () => {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-[35px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-[20px]">
                     {industries.map((industry, index) => (
                         <div
                             key={index}
@@ -129,7 +129,7 @@ const IndustrySolutions = () => {
                             {/* Card Header */}
                             <div
                                 className={`
-                  px-4 py-4 md:px-[30px] md:py-[20px] flex items-center gap-4 md:gap-[20px]
+                  px-4 py-4 md:px-[30px] md:py-[15px] flex items-center gap-4 md:gap-[20px]
                   ${industry.theme === 'dark'
                                         ? 'bg-[#053F31] text-white'
                                         : 'bg-[#D9E5DB] text-[#053F31]'
@@ -145,11 +145,11 @@ const IndustrySolutions = () => {
                             </div>
 
                             {/* Card Body */}
-                            <div className="p-5 md:p-[30px] flex-1 flex flex-col gap-5 md:gap-[20px]">
+                            <div className="p-5 md:p-[20px] flex-1 flex flex-col gap-5 md:gap-[10px]">
 
                                 {/* Challenge Section */}
                                 <div>
-                                    <h3 className="font-medium text-black mb-[10px] ">Typical Challenges</h3>
+                                    <h4 className="font-medium text-black mb-[5px] ">Typical Challenges</h4>
                                     <p className="text-[#757575] font-light leading-relaxed ">
                                         {industry.challenges}
                                     </p>
@@ -157,15 +157,15 @@ const IndustrySolutions = () => {
 
 
                                 <div className=" border-gray-100">
-                                    <h3 className="font-medium text-black mb-[10px] ">Our Solutions</h3>
+                                    <h4 className="font-medium text-black mb-[5px] ">Our Solutions</h4>
                                     <p className="text-[#757575] font-light leading-relaxed ">
                                         {industry.solutions}
                                     </p>
                                 </div>
 
                                 {/* Results Section (with top border) */}
-                                <div className="pt-[20px] border-t border-gray-100 mt-auto">
-                                    <h3 className="font-medium text-black mb-[10px] ">Expected Results</h3>
+                                <div className="pt-[10px] border-t border-gray-100 mt-auto ">
+                                    <h4 className="font-medium text-black mb-[10px] ">Expected Results</h4>
                                     <p className="text-[#757575] font-light leading-relaxed ">
                                         {industry.results}
                                     </p>

@@ -35,7 +35,7 @@ const logos = [
    CARD – 1440px: 265×153 (5 fit); 1920px/mobile/tablet: 292×169
 ───────────────────────────────────────────────────────────── */
 const Card = ({ Component, size = "default" }: { Component: React.ComponentType; size?: "default" | "compact" }) => (
-    <div className={`flex-shrink-0 bg-[#D9E5DB]/40 rounded-[10px] border border-[#D9D9D9] flex items-center justify-center shadow-sm ${size === "compact" ? "w-[265px] h-[153px]" : "w-[292px] h-[169px]"}`}>
+    <div className={` flex-shrink-0 bg-[#D9E5DB]/40 rounded-[10px] border border-[#D9D9D9] flex items-center justify-center shadow-sm ${size === "compact" ? "w-[265px] h-[153px]" : "w-[292px] h-[169px]"}`}>
         <Component />
     </div>
 );
@@ -47,8 +47,8 @@ const NavBtn = ({ onClick, children, variant = "prev" }: { onClick: () => void; 
     <button
         onClick={onClick}
         className={`w-[50px] h-[50px] rounded-full flex items-center justify-center shadow-md transition-colors ${variant === "next"
-                ? "bg-[#DAE6DC] text-[#053F31] hover:bg-[#c5dcc8] border border-[#053F31]/30"
-                : "bg-[#053F31] text-white hover:bg-[#0F3F32]"
+            ? "bg-[#DAE6DC] text-[#053F31] hover:bg-[#c5dcc8] border border-[#053F31]/30"
+            : "bg-[#053F31] text-white hover:bg-[#0F3F32]"
             }`}
     >
         {children}
@@ -103,8 +103,8 @@ const Certifications = () => {
     const isBigScreen = !isMobile;
 
     return (
-        <section className="mb-[70px] sm:mb-[130px]">
-            <div className="mx-auto px-4 max-w-[1408px] 2xl:max-w-[1540px]">
+        <section className="mb-[70px]">
+            <div className="mx-auto md:px-[20px] md:px-[30px] max-w-7xl 2xl:max-w-[1540px]">
 
                 {/* ── Heading ── */}
                 <h2 className="font-lexend text-center font-extralight mb-10 leading-tight text-3xl md:text-4xl">
@@ -112,10 +112,15 @@ const Certifications = () => {
                     <span className="font-semibold">Certifications &amp; Partnerships</span>
                 </h2>
 
-                {/* ══ BIG SCREEN (≥640px): CSS shows this from beginning, no JS ══ */}
-                <div className="hidden sm:flex justify-center gap-[20px]">
+                {/* ══ BIG SCREEN (≥640px): flex-1 cards fill the container width ══ */}
+                <div className="hidden sm:flex gap-[20px]">
                     {logos.map(({ Component, key }) => (
-                        <Card key={key} Component={Component} size={is2xl ? "default" : "compact"} />
+                        <div
+                            key={key}
+                            className="flex-1 bg-[#D9E5DB]/40 rounded-[10px] border border-[#D9D9D9] flex items-center justify-center shadow-sm h-[150px] 2xl:h-[169px]"
+                        >
+                            <Component />
+                        </div>
                     ))}
                 </div>
 

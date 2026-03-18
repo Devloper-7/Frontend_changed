@@ -20,14 +20,14 @@ const CODE_ZIGZAG_COUNT = 3;
 
 export default function DocsPage() {
     return (
-        <main className="px-[20px] md:px-[40px]">
+        <main className="px-[20px] md:px-[60px]">
             <div className="absolute  z-10 md:mt-[104px] mt-40 left-1/2 -translate-x-1/2">
                 <IconRight />
             </div>
             <ContactHero
                 headline={
                     <h1 className="font-extralight text-white font-lexend leading-tight mt-35">
-                        Payment&nbsp;<br className='md:hidden block'/>
+                        Payment&nbsp;<br className='md:hidden block' />
                         <span className="font-medium">Successful!</span>
                     </h1>
                 }
@@ -36,7 +36,7 @@ export default function DocsPage() {
             />
             <BackgroundGradients count={CODE_ZIGZAG_COUNT} />
             <div className="mt-10 md:mt-14 flex flex-col gap-[30px] md:gap-[50px] xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
-                <OrderConfirmation/>
+                <OrderConfirmation />
                 <OrderSummary
                     items={[
                         {
@@ -65,7 +65,7 @@ export default function DocsPage() {
                     vatPercent="21%"
                     total="€9,075.00"
                 />
-                <BillingInfoDeliveryLocationCards/>
+                <BillingInfoDeliveryLocationCards />
                 <WhatHappensNext />
                 <OrderInfoSection />
             </div>

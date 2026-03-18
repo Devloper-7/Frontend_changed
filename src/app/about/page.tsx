@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 
 export default function AboutPage() {
   return (
-    <main className="px-[20px] md:px-[40px]">
+    <main className="px-[20px] md:px-[60px]">
       <ContactHero
         headline={
           <h1 className="font-extralight text-white font-lexend leading-tight">
@@ -26,7 +26,7 @@ export default function AboutPage() {
       <div className="-mx-[20px] md:mx-0">
         <TeamSection />
       </div>
-        <Footer />
+      <Footer />
     </main>
   );
 }

@@ -15,7 +15,7 @@ const SERVICES_ZIGZAG_COUNT = 9;
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen px-[20px] md:px-[40px] xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto font-outfit">
+    <main className="min-h-screen px-[20px] md:px-[60px] xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto font-outfit">
 
       <ContactHero
         // 1. HEADLINE
@@ -54,18 +54,17 @@ export default function ServicesPage() {
       </ContactHero>
       <BackgroundGradients count={SERVICES_ZIGZAG_COUNT} />
       <WasteManagement />
-      <div className='px-[20px] md:px-0'>
 
       <ProvenProcess />
-      </div>
+
       <IndustrySolutions />
       <QuoteForm />
       <WhyChooseUs />
       <Certifications />
-      <div className='px-[20px] md:px-0'>
+
 
       <Footer />
-      </div>
+
     </main>
   );
 }

@@ -45,10 +45,10 @@ const FieldWrapper = ({ label, children }: { label: string, children: React.Reac
 const QuoteForm = () => {
     return (
         <section className='mx-auto max-w-[320px] xl:max-w-[1440px] 2xl:max-w-[1920px]' >
-            <div className="w-full bg-biomket-gradient bg-[#053F31] rounded-[20px] px-[20px] py-[50px] md:px-[150px] mx-auto shadow-2xl">
+            <div className="w-full bg-biomket-gradient bg-[#053F31] rounded-[20px] px-[20px] py-[30px] md:px-[150px] mx-auto shadow-2xl">
 
                 {/* Header */}
-                <div className="text-center mb-[50px] max-md:mb-[30px]">
+                <div className="text-center mb-[30px] max-md:mb-[30px]">
                     <h2 className="font-lexend text-white font-extralight mb-[20px] max-md:mb-[15px] leading-tight max-md:text-[38px] max-md:leading-[1.2]">
                         Request a <br className="md:hidden" /> <span className="font-medium">Personalized <br className="md:hidden" /> Quote</span>
                     </h2>
@@ -67,7 +67,7 @@ const QuoteForm = () => {
                             <input
                                 type="text"
                                 placeholder="Your Company Name"
-                                className="w-full min-w-[280px] 2xl:w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[60px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
+                                className="w-full min-w-[280px] 2xl:max-w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[50px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
                             />
                             <div className="absolute bottom-0 left-[30px] h-[2px] min-w-[50px] bg-white z-10 rounded-t-sm"></div>
 
@@ -77,7 +77,7 @@ const QuoteForm = () => {
                             <div className="relative">
                                 <select
                                     defaultValue=""
-                                    className="w-full min-w-[280px] 2xl:w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[60px] text-white/70 font-light focus:outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
+                                    className="w-full min-w-[280px] 2xl:maxw-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[50px] text-white/70 font-light focus:outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
                                 >
                                     <option value="" disabled className="text-[#000000]">Select Your Industry</option>
                                     <option value="agrifood" className="text-[#000000]">Agrifood Industry</option>
@@ -96,7 +96,7 @@ const QuoteForm = () => {
                             <input
                                 type="text"
                                 placeholder="Your Full Name"
-                                className="w-full min-w-[280px] 2xl:w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[60px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
+                                className="w-full min-w-[280px] 2xl:max-w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[50px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
                             />
                             <div className="absolute bottom-0 left-[30px] h-[2px] min-w-[50px] bg-white z-10 rounded-t-sm"></div>
 
@@ -106,7 +106,7 @@ const QuoteForm = () => {
                             <input
                                 type="text"
                                 placeholder="+xxx xxx xxx"
-                                className="w-full min-w-[280px] 2xl:w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[60px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
+                                className="w-full min-w-[280px] 2xl:max-w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[50px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
                             />
                             <div className="absolute bottom-0 left-[30px] h-[2px] min-w-[50px] bg-white z-10 rounded-t-sm"></div>
 
@@ -116,7 +116,7 @@ const QuoteForm = () => {
                             <input
                                 type="email"
                                 placeholder="Your Mail Id"
-                                className="w-full min-w-[280px] 2xl:w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[60px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
+                                className="w-full min-w-[280px] 2xl:max-w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[50px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors"
                             />
                             <div className="absolute bottom-0 left-[30px] h-[2px] min-w-[50px] bg-white z-10 rounded-t-sm"></div>
 
@@ -126,7 +126,7 @@ const QuoteForm = () => {
                             <div className="relative">
                                 <select
                                     defaultValue=""
-                                    className="w-full min-w-[280px] 2xl:w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[60px] text-white/70 font-light focus:outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
+                                    className="w-full min-w-[280px] 2xl:max-w-[755px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[50px] text-white/70 font-light focus:outline-none focus:border-white/50 transition-colors appearance-none cursor-pointer"
                                 >
                                     <option value="" className="text-[#000000]">Select Volume Range</option>
                                     <option value="small" className="text-[#000000]">0 - 10 Tons</option>
@@ -147,9 +147,9 @@ const QuoteForm = () => {
                     <FieldWrapper label="Describe Your Needs *">
                         <textarea
                             placeholder="Tell us about your current waste management challenges, goals, and what you're looking for..."
-                            className="w-full py-[15px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[140px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors resize-none 2xl:w-[1540px]"
+                            className="w-full py-[15px] 2xl:max-w-[1480px] border border-[#FFFFFF]/20 rounded-[5px] px-[30px] h-[100px] text-white  font-light focus:outline-none focus:border-white/50 transition-colors resize-none 2xl:w-[1540px]"
                         />
-                        <div className="absolute bottom-2 left-[30px] h-[2px] min-w-[50px] bg-white z-10 rounded-t-sm"></div>
+                        <div className="absolute bottom-1.5 left-[30px] h-[2px] min-w-[50px] bg-white z-10 rounded-t-sm"></div>
 
                     </FieldWrapper>
 
@@ -167,13 +167,13 @@ const QuoteForm = () => {
                                     <IconCheck />
                                 </div>
                             </div>
-                            <span className="text-white text-[20px] max-md:text-[15px] font-light select-none">
+                            <span className="text-white  max-md:text-[15px] font-light select-none">
                                 I agree to receive communications from Biomket and accept the <a href="/privacy-policy" className="underline decoration-white/50 hover:text-white transition-colors">Privacy Policy</a>
                             </span>
                         </label>
 
                         {/* Submit Button */}
-                        <div className="flex flex-col items-center gap-[30px] max-md:gap-[20px] mt-[50px] max-md:mt-[30px]">
+                        <div className="flex flex-col items-center gap-[30px] max-md:gap-[20px] mt-[30px] max-md:mt-[30px]">
                             <button
                                 type="button"
                                 className="group flex items-center cursor-pointer gap-2 bg-[#DAE6DC] text-[#053F31] font-bold py-2.5 pl-6 pr-2 rounded-full hover:bg-white transition-all duration-300"

@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className={`py-20 md:py-28 px-[20px] md:px-[60px] font-outfit ${inView ? "why-choose-us-in" : ""}`}>
+    <section ref={sectionRef} className={`py-20 md:py-[70px] px-[20px] md:px-[60px] font-outfit ${inView ? "why-choose-us-in" : ""}`}>
       <style dangerouslySetInnerHTML={{ __html: `
         .why-choose-us-step { opacity: 0; }
         .why-choose-us-in .why-choose-us-step {
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="text-center mb-[60px] md:mb-[80px]">
+        <div className="text-center mb-[60px] md:mb-[40px]">
           <h2 className="font-light text-black mb-[10px] font-lexend">
             Why <span className="font-medium">Choose Biomket</span>
           </h2>

@@ -170,16 +170,16 @@ const WasteManagement = () => {
   };
 
   return (
-    <section className="px-[20px] md:px-[60px] mb-[70px] sm:mb-[130px]">
+    <section className="md:px-[30px] mb-[70px] ">
       <div className="xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
 
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-[50px]  ">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end mb-[30px]  ">
           <h2 className="font-lexend font-extralight text-center md:text-left leading-[55px] text-black max-w-[495px]">
             Comprehensive Waste <br />
             <span className="font-medium">Management Services</span>
           </h2>
-          <p className="md:max-w-[534px] py-[9px] !text-[20px] text-center md:text-right text-[#424242] font-light leading-relaxed self-start md:self-end">
+          <p className="md:max-w-[534px] py-[9px] text-[20px]! text-center md:text-right text-[#424242] font-light leading-relaxed self-start md:self-end">
             End-to-end solutions designed for large enterprises seeking to maximize resource valorization while ensuring full regulatory compliance
           </p>
         </div>
@@ -225,7 +225,7 @@ const WasteManagement = () => {
         </div>
 
         {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 gap-[30px]">
+        <div className="hidden md:grid md:grid-cols-3 gap-[15px]">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

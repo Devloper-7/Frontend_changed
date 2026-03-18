@@ -31,9 +31,9 @@ const ValueProposition = () => {
         Our Value <span className="font-medium">Proposition</span>
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-6 md:gap-[30px] mb-[70px] sm:mb-[130px] 2xl:mx-[85px] xl:mx-[40px]">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-[30px] mb-[70px] 2xl:mx-[85px] xl:mx-[40px]">
         <ServiceCard
-          icon={<IconWasteGenerators/>}
+          icon={<IconWasteGenerators />}
           title="For Waste Generators"
           list={[
             "Turn waste management costs into revenue streams",
@@ -46,7 +46,7 @@ const ValueProposition = () => {
         />
 
         <ServiceCard
-          icon={<IconValorizers/>}
+          icon={<IconValorizers />}
           title="For Valorizers"
           list={[
             "Access to stable sources of organic raw materials",

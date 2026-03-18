@@ -210,7 +210,7 @@ export default function HeroWithCardsSection({
                 </div>
 
                 {/* ---------------- CARDS SECTION ---------------- */}
-                <div className="-mt-28 mb-[70px] sm:mb-[130px]">
+                <div className="-mt-28 mb-[70px]">
                     <div className="mx-auto max-w-[1280px] lg:max-w-[1480px]">
                         {/* DESKTOP GRID */}
                         <div
