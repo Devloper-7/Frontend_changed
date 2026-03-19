@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -73,154 +73,56 @@ const DESKTOP_CARD_HEIGHT  = 207;
 const DESKTOP_CARD_GAP     = 8;
 const DESKTOP_STACK_OFFSET = 36;
 
-// ─── NEW: how many px of native scroll = 1 card collapse ─────────────────────
-const SCROLL_PER_CARD = 220;
-
 export default function HowItWorksSection() {
-  // ── trackRef points to the tall outer div ──
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  // ── currentIndex: was driven by wheel, now driven by native scroll ──
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const rafRef = useRef(false);
-
-  // ── NEW scroll handler — replaces wheel logic entirely ──
-  const handleScroll = useCallback(() => {
-    if (rafRef.current) return;
-    rafRef.current = true;
-    requestAnimationFrame(() => {
-      const track = trackRef.current;
-      if (!track) { rafRef.current = false; return; }
-      const scrolled   = Math.max(0, -track.getBoundingClientRect().top);
-      const scrollable = track.offsetHeight - window.innerHeight;
-      const progress   = scrollable > 0 ? Math.min(1, scrolled / scrollable) : 0;
-      setCurrentIndex(Math.min(steps.length - 1, Math.floor(progress * steps.length)));
-      rafRef.current = false;
-    });
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, [handleScroll]);
-
-  // ── Layout calculations UNCHANGED ──
-  const desktopListHeight =
-    steps.length * DESKTOP_CARD_HEIGHT + (steps.length - 1) * DESKTOP_CARD_GAP;
-
-  const desktopCollapsedHeight =
-    currentIndex * DESKTOP_STACK_OFFSET +
-    DESKTOP_CARD_HEIGHT +
-    Math.max(0, steps.length - currentIndex - 1) * (DESKTOP_CARD_HEIGHT + DESKTOP_CARD_GAP);
-
-  const desktopContainerHeight = Math.max(desktopListHeight, desktopCollapsedHeight);
+  const [currentIndex, setCurrentIndex] = useState(steps.length - 1);
 
   return (
-    <section className="w-full mt-[70px] md:mt-[130px]">
+    <section className="w-full mt-[50px] xl:mt-[70px]">
+      <div className="w-full xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
+        <div className="relative mx-[20px] md:mx-auto xl:max-w-[1440px] 2xl:max-w-[1740px] overflow-hidden rounded-[16px]">
 
-      {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-          SCROLL TRACK — tall div that gives scroll fuel.
-          Height = 100vh (sticky hold) + (N-1) × SCROLL_PER_CARD
-          This is the ONLY structural addition to your code.
-      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-      <div
-        ref={trackRef}
-        style={{
-          position: "relative",
-          height: `calc(100vh + ${(steps.length - 1) * SCROLL_PER_CARD}px)`,
-        }}
-      >
+          <Image
+            src="/how-it-work_bg.png"
+            alt="How it works background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 z-[1] pointer-events-none opacity-90" aria-hidden />
 
-        {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            STICKY PANEL — locks to viewport while track scrolls.
-            This replaces nothing — it just wraps your existing JSX.
-        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-        <div
-          style={{
-            position: "sticky",
-            top: 0,
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
+          <div className="relative z-10 flex flex-col-reverse lg:flex-row lg:items-start lg:justify-between lg:gap-[24px] px-[22px] py-[22px] md:px-[46px] md:py-[30px]">
 
-          {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-              EVERYTHING BELOW IS 100% YOUR ORIGINAL JSX.
-              Zero changes to classNames, layout, or content.
-          ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
-          <div className="w-full xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
-            <div className="relative mx-[20px] md:mx-auto md:h-[727px] xl:max-w-[1360px] 2xl:max-w-[1740px] overflow-hidden rounded-[16px]">
+            {/* Left Column */}
+            <div className="relative w-full">
 
-              <Image
-                src="/how-it-work_bg.png"
-                alt="How it works background"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 z-[1] pointer-events-none opacity-90" aria-hidden />
-
-              <div className="relative z-10 flex flex-col-reverse lg:flex-row lg:items-start lg:justify-between lg:gap-[72px] px-[22px] py-[22px] md:px-[46px] md:py-[30px]">
-
-                {/* Left Column */}
-                <div className="relative w-full lg:max-w-[780px]">
-
-                  {/* Desktop cards */}
-                  <div className="relative hidden w-full md:block" style={{ minHeight: desktopContainerHeight }}>
-                    {steps.map((stepItem, index) => {
-                      const Icon     = stepItem.icon;
-                      const isPast   = index < currentIndex;
-                      const isActive = index === currentIndex;
-
-                      const baseTop = index * (DESKTOP_CARD_HEIGHT + DESKTOP_CARD_GAP);
-                      const stackedTop = index * DESKTOP_STACK_OFFSET;
-                      const trailingTop =
-                        currentIndex * DESKTOP_STACK_OFFSET +
-                        DESKTOP_CARD_HEIGHT +
-                        (index - currentIndex - 1) * (DESKTOP_CARD_HEIGHT + DESKTOP_CARD_GAP) +
-                        DESKTOP_CARD_GAP;
-
-                      const top     = currentIndex === 0 ? baseTop : isPast || isActive ? stackedTop : trailingTop;
-                      const scale   = isPast ? Math.max(0.9, 1 - (currentIndex - index) * 0.03) : 1;
-                      const opacity = isPast ? Math.max(0.5, 1 - (currentIndex - index) * 0.16) : 1;
-
-                      return (
-                        <div
-                          key={stepItem.id}
-                          className="absolute left-0 mt-[30px] w-full overflow-hidden rounded-[20px] border border-[#E8ECE8] bg-[#F5F6F4] p-[20px] text-[#053F31] shadow-[0_12px_30px_rgba(0,0,0,0.08)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                          style={{
-                            top,
-                            height: DESKTOP_CARD_HEIGHT,
-                            transform: `scale(${scale})`,
-                            opacity,
-                            zIndex: steps.length + index,
-                          }}
-                        >
-                          <div className="flex h-full flex-col justify-between">
-                            <div className="flex items-start justify-between gap-4">
-                              <div className="flex h-[38px] w-[38px] shrink-0 items-center justify-center">
-                                <Icon />
-                              </div>
-                              <span className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full bg-[#DDE5DD] text-[16px] font-semibold text-[#7A9D90]">
-                                {stepItem.number}
-                              </span>
-                            </div>
-                            <div className="pb-[2px]">
-                              <p className="text-[15px] font-semibold leading-[1.2] text-[#111111]">{stepItem.title}</p>
-                              <p className="mt-[10px] text-[14px] font-light leading-[1.45] text-[#7B7B7B]">{stepItem.description}</p>
-                            </div>
+              {/* Desktop cards — 2 columns, 1 box per column */}
+              <div className="hidden w-full grid-cols-2 gap-[8px] md:grid">
+                {steps.map((stepItem) => {
+                  const Icon = stepItem.icon;
+                  return (
+                    <div
+                      key={stepItem.id}
+                      className="overflow-hidden rounded-[20px] border border-[#E8ECE8] bg-[#F5F6F4] p-[20px] text-[#053F31] shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
+                      style={{ height: DESKTOP_CARD_HEIGHT }}
+                    >
+                      <div className="flex h-full flex-col justify-between">
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex h-[38px] w-[38px] shrink-0 items-center justify-center">
+                            <Icon />
                           </div>
+                          <span className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full bg-[#DDE5DD] text-[16px] font-semibold text-[#7A9D90]">
+                            {stepItem.number}
+                          </span>
                         </div>
-                      );
-                    })}
-                  </div>
+                        <div className="pb-[2px]">
+                          <p className="text-[15px] font-semibold leading-[1.2] text-[#111111]">{stepItem.title}</p>
+                          <p className="mt-[10px] text-[14px] font-light leading-[1.45] text-[#7B7B7B]">{stepItem.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
 
                   {/* Mobile cards */}
                   <div className="font-outfit w-full pt-[10px] pb-0 md:hidden">
@@ -288,9 +190,6 @@ export default function HowItWorksSection() {
               </div>
             </div>
           </div>
-
-        </div>{/* /sticky */}
-      </div>{/* /track */}
 
     </section>
   );

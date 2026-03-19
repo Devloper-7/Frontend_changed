@@ -2,12 +2,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 
-const SectorItem = ({ iconSrc, title, desc }: { iconSrc: string, title: string, desc: string }) => (
+const SectorItem = ({ iconSrc, title, desc, isFirst }: { iconSrc: string, title: string, desc: string; isFirst?: boolean }) => (
   <div className={`
     group flex flex-col sm:flex-row items-start 
     gap-[20px] sm:gap-[30px] mb-[20px] pb-[20px] 
-    border-b border-[#FFFFFF]/20 
-    last:mb-[20px] last:border-b first:pt-[20px] first:border-t
+    ${isFirst ? "pt-[20px] border-t border-b border-[#FFFFFF]/20" : "border-b border-[#FFFFFF]/20"}
   `}>
     {/* Icon Wrapper: flips on hover (card or icon) */}
     <div className="bg-[#DAE6DC] rounded-xl shrink-0 transition-transform duration-300 ease-in-out hover:scale-x-[-1] group-hover:scale-x-[-1]">
@@ -49,10 +48,9 @@ const SectorServe = () => {
   return (
     <section
       ref={sectionRef}
-      className={`relative overflow-hidden rounded-[20px] p-[20px] md:p-[50px] mb-[70px] ${inView ? "sector-serve-in" : ""}`}
+      className={`relative overflow-hidden rounded-[20px] p-[20px] md:p-[30px] mb-[50px] xl:mb-[70px] ${inView ? "sector-serve-in" : ""}`}
     >
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style dangerouslySetInnerHTML={{ __html: `
         .sector-serve-step { opacity: 0; }
         .sector-serve-in .sector-serve-step {
           animation: sector-serve-slide-in 0.6s ease-out forwards;
@@ -69,7 +67,7 @@ const SectorServe = () => {
 
       <div className={`relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[30px] md:gap-12`}>
         {/* Header Section */}
-        <div className="w-full max-w-[385px]">
+        <div className="w-full">
           <h2 className="font-extralight text-white mb-[30px]">
             Sector We<br /> <span className='font-medium'> Serve </span>
           </h2>
@@ -79,10 +77,10 @@ const SectorServe = () => {
         </div>
 
         {/* Items List */}
-        <div className="flex flex-col mt-[20px] [&>:first-child]:border-t [&>:first-child]:border-t-[#FFFFFF]/20">
+        <div className="flex flex-col">
           {SECTORS.map((sector, index) => (
             <div key={sector.title} className="sector-serve-step" style={{ animationDelay: `${index * 0.08}s` }}>
-              <SectorItem iconSrc={sector.iconSrc} title={sector.title} desc={sector.desc} />
+              <SectorItem iconSrc={sector.iconSrc} title={sector.title} desc={sector.desc} isFirst={index === 0} />
             </div>
           ))}
         </div>

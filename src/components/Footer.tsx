@@ -30,8 +30,8 @@ export default function Footer({ showCallToAction = true }: { showCallToAction?:
   return (
     <div className="w-full">
       {showCallToAction && <CallToAction />}
-                          {/* relative md:mx-[40px] xl:max-w-[1360px] 2xl:max-w-[1840px] lg:mx-auto pt-100 md:pt-40 pb-10 rounded-[20px] overflow-hidden mt-10 px-[20px] md:px-[60px] */}
-      <footer className={`relative md:mx-[40px] xl:max-w-[1360px] 2xl:max-w-[1840px] lg:mx-auto pb-10 rounded-[20px] overflow-hidden mt-10 px-[20px] md:px-[60px] ${showCallToAction ? "pt-100 md:pt-40" : "pt-[30px]"}`}>
+                          {/* relative md:mx-[40px] xl:max-w-[1360px] 2xl:max-w-[1840px] lg:mx-auto pt-100 md:pt-40 pb-10 rounded-[20px] overflow-hidden mt-10 px-[20px] md:px-[20px] xl:px-[60px] */}
+      <footer className={`relative md:mx-[40px] xl:max-w-[1440px] 2xl:max-w-[1840px] lg:mx-auto pb-10 rounded-[20px] overflow-hidden px-[20px] md:px-[20px] xl:px-[60px] ${showCallToAction ? "pt-100 md:pt-40" : "pt-[30px]"}`}>
 
         <div className="absolute inset-0 z-0">
           <img

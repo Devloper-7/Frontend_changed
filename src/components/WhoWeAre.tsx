@@ -20,12 +20,12 @@ function IconValorizationServices() {
 
 const WhoWeAre = () => {
   return (
-    <section className="mb-[70px]">
-      <div className="flex flex-col md:flex-row justify-between  mb-10 md:mb-12 gap-6 md:gap-8 border-b border-[#DDDDDD] pb-[30px] mb-[30px] md:pb-[50px] md:mb-[50px]">
+    <section className="mb-[50px] xl:mb-[70px]">
+      <div className="flex flex-col md:flex-row justify-between mb-10 md:mb-12 gap-6 md:gap-8 border-b border-[#DDDDDD] pb-[20px] mb-[20px] xl:pb-[30px] xl:mb-[30px]">
         <h2 className="font-extralight text-center md:text-left text-black whitespace-nowrap font-lexend leading-tight">
           Who We <span className="font-medium">Are</span>
         </h2>
-        <p className="max-w-[800px] text-[#424242]  text-center md:text-right font-light font-outfit">
+        <p className="max-w-[800px] text-[#424242] text-center md:text-right font-light font-outfit">
           Biomket was founded in 2024 with a clear mission: to revolutionize the circular economy by connecting supply and demand for organic waste across Europe, while offering specialized valorization services for companies seeking tailored solutions.
         </p>
       </div>

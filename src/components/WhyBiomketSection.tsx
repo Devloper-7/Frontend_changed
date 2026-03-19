@@ -150,7 +150,7 @@ export default function WhyBiomket() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center pt-10 2xl:pl-[54px] 2xl:pr-[54px] max-w-[360px] xl:max-w-[1360px] 2xl:max-w-[1740px] mx-auto md:pt-[130px] md:bg-transparent overflow-hidden mb-[70px] md:mb-[130px] xl:pl-[0px] xl:pr-[0px]">
+    <div className="w-full flex flex-col items-center 2xl:pl-[54px] 2xl:pr-[54px] max-w-[360px] xl:max-w-[1440px] 2xl:max-w-[1740px] mx-auto pt-[50px] xl:pt-[70px] md:bg-transparent overflow-hidden mb-[50px] xl:mb-[70px] xl:pl-[0px] xl:pr-[0px]">
 
       <h2 className="font-extralight mb-8 md:mb-[72px] text-black leading-tight">
         Why <span className="font-medium">Biomket?</span>

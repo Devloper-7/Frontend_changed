@@ -16,7 +16,7 @@ const Page = () => {
     //   backgroundImage: "radial-gradient(circle at 0% 0%, rgba(5, 63, 49, 0.06) 0%, transparent 50%)",
     // }}
     >
-      <div className="mx-auto max-w-[1440px] px-[20px] md:px-0 md:mx-[40px] rounded-[20px] xl:max-w-[1440px] 2xl:max-w-[1920px]">
+      <div className="mx-auto max-w-[1440px] px-[20px] md:px-0 lg:px-[60px] rounded-[20px] xl:max-w-[1440px] 2xl:max-w-[1920px]">
         <ContactHero />
         <BackgroundGradients count={CONTACT_ZIGZAG_COUNT} />
 

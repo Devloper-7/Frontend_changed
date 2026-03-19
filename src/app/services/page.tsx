@@ -54,17 +54,12 @@ export default function ServicesPage() {
       </ContactHero>
       <BackgroundGradients count={SERVICES_ZIGZAG_COUNT} />
       <WasteManagement />
-
       <ProvenProcess />
-
       <IndustrySolutions />
       <QuoteForm />
       <WhyChooseUs />
       <Certifications />
-
-
       <Footer />
-
     </main>
   );
 }

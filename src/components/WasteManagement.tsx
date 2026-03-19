@@ -170,7 +170,7 @@ const WasteManagement = () => {
   };
 
   return (
-    <section className="md:px-[30px] mb-[70px] ">
+    <section className="md:px-[30px] mb-[50px] xl:mb-[70px] ">
       <div className="xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
 
         {/* Header Section */}

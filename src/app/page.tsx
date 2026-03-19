@@ -106,7 +106,7 @@ const HOME_ZIGZAG_COUNT = 6;
 export default function Home() {
   return (
     // <div className="min-h-screen bg-white">
-    <div className="min-h-screen flex flex-col text-black max-w-[1920px] mx-auto px-[20px] md:px-[60px]">
+    <div className="min-h-screen flex flex-col text-black max-w-[1920px] mx-auto px-[20px] xl:px-[60px]">
       <Hero
         title={heroData.title}
         titleBold={heroData.titleBold}
@@ -133,7 +133,7 @@ export default function Home() {
           to the URL to see the logged-in state.
         </p>
       </main> */}
-    </div>
-
+      </div>
+    
   );
 }

@@ -174,9 +174,9 @@ export default function Hero({
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden rounded-[20px] md:px-0 min-w-[320px] xl:max-w-[1360px] 2xl:max-w-[1840px] mx-auto">
+    <section className="relative w-full overflow-hidden rounded-[20px] md:px-0 min-w-[320px] xl:max-w-[1440px] 2xl:max-w-[1840px] mx-auto">
 
-      <div className="relative w-full my-[20px]">
+      <div className="relative w-full mt-[20px]">
 
         {/* Responsive Hero Image */}
         <picture>
@@ -284,7 +284,7 @@ export default function Hero({
             <img src="/bin.png" alt="" />
           </div>
           <div
-            className="contact-hero-rain-lines absolute left-1/2 bottom-0 pointer-events-none flex items-end justify-center gap-14"
+            className="contact-hero-rain-lines absolute left-1/2 bottom-0 pointer-events-none flex items-end justify-center 2xl:gap-14 gap-10"
             style={{ height: "35%" }}
             aria-hidden
           >
@@ -297,7 +297,7 @@ export default function Hero({
         {/* Content Overlay */}
         <div
           ref={contentRef}
-          className={`absolute inset-0 flex flex-col items-center px-[20px] pt-[103px] text-center md:px-[289px] md:pt-[194px] md:pb-[252px] ${inView ? "hero-text-in" : ""}`}
+          className={`absolute inset-0 flex flex-col items-center px-[20px] pt-[103px] text-center md:px-[289px] 2xl:pt-[200px] xl:pt-[90px] md:pb-[252px] ${inView ? "hero-text-in" : ""}`}
         >
 
           <h1 className="hero-text-slide mb-[25px] font-extralight tracking-wide text-white md:w-[645px]" style={{ animationDelay: "0s" }}>

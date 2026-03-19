@@ -48,8 +48,8 @@ export default function MarketplaceSection({
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [stepPx, setStepPx] = useState(381.75);
-  const [gapPx, setGapPx] = useState(10);
-  const [isMd, setIsMd] = useState(true);
+  // const [gapPx, setGapPx] = useState(10);
+  // const [isMd, setIsMd] = useState(true);
   const [isResetting, setIsResetting] = useState(false);
   const [itemsPerView, setItemsPerView] = useState(4);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -79,7 +79,7 @@ export default function MarketplaceSection({
     } else {
       setCurrentIndex((prev) => prev - 1);
     }
-  };
+  }; 
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -120,8 +120,8 @@ export default function MarketplaceSection({
         gap = 10;
       }
       setItemsPerView(itemsPerView);
-      setGapPx(gap);
-      setIsMd(width >= 768);
+      // setGapPx(gap);
+      // setIsMd(width >= 768);
       const totalGap = gap * (itemsPerView - 1);
       const cardWidth = (w - totalGap) / itemsPerView;
       setStepPx(cardWidth + gap);
@@ -135,7 +135,7 @@ export default function MarketplaceSection({
 
   const router = useRouter();
   return (
-    <section className="relative w-full py-[70px] md:py-[130px] px-[20px] xl:px-[70px] 2xl:px-[70px]">
+    <section className="relative w-full py-[50px] xl:py-[70px] px-[20px] xl:px-[40px]">
       {/* <div className="mx-auto max-w-[1440px]"> */}
       {/* Header Section */}
       <div className="mb-[20px] flex flex-col gap-6 md:flex-row items-center text-center md:text-left md:items-start md:justify-between">
@@ -187,21 +187,21 @@ export default function MarketplaceSection({
       </div>
 
       {/* Product Cards (carousel) */}
-      <div ref={carouselRef} className="mx-auto mb-[41px] xl:max-w-[1170px] 2xl:max-w-[1758px] overflow-hidden">
+      <div ref={carouselRef} className="mx-auto mb-[20px] xl:max-w-[1170px] 2xl:max-w-[1758px] overflow-hidden">
         <div
-          className="flex gap-[10px] xl:gap-[10px] 2xl:gap-[66px] ease-out"
+          className="flex ease-out"
           style={{
             transition: isResetting ? "none" : "transform 0.3s ease-out",
             transform: `translateX(-${currentIndex * stepPx}px)`,
           }}
         >
           {displayProducts.map((product, index) => {
-            const itemWidth = stepPx - gapPx === 466 ? 461.75 : stepPx - gapPx;
+            // const itemWidth = stepPx - gapPx === 466 ? 461.75 : stepPx - gapPx;
             return (
             <div
               key={`${product.id}-${index}`}
-              className="flex-shrink-0"
-              style={{ width: itemWidth, minWidth: itemWidth }}
+              className="flex-shrink-0 !w-[370px]"
+              // style={{ width: itemWidth, minWidth: itemWidth }}
             >
               <ProductCard product={product} isLoggedIn={isLoggedIn} />
             </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export type FilterCheckboxOption = { id: string; label: string; count?: number };
 
@@ -191,6 +191,16 @@ export default function ProductFiltersModal({
   );
   const [distanceKm, setDistanceKm] = useState(25);
 
+  useEffect(() => {
+    if (open) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prev;
+      };
+    }
+  }, [open]);
+
   const handleReset = () => {
     setWasteCategory(Object.fromEntries(wasteCategoryOptions.map((o) => [o.id, false])));
     setLocationAndalusia(false);
@@ -248,7 +258,7 @@ export default function ProductFiltersModal({
         aria-labelledby="filters-title"
       >
         {/* Scrollable content - Distance and all sections scroll on small screens */}
-        <div className="min-h-0 flex-1 overflow-y-auto p-[20px] md:p-[50px] md:max-h-[834px]">
+        <div className="min-h-0 flex-1 overflow-y-auto p-[20px] xl:p-[30px] md:max-h-[834px]">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-[#DDDDDD] pb-[10px]">
             <h3 id="filters-title" className="font-outfit font-semibold text-[#000000]">
@@ -477,7 +487,7 @@ export default function ProductFiltersModal({
             </div>
           </div>
           {/* Apply Filters & Clear All - inside same popup as all filters */}
-          <div className="flex flex-wrap items-center justify-center gap-[15px] pt-[50px] md:justify-end">
+          <div className="flex flex-wrap items-center justify-center gap-[15px] pt-[40px] md:justify-end">
             <button
               type="button"
               onClick={handleApply}

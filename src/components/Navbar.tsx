@@ -163,7 +163,7 @@ export default function Navbar() {
     return (
 
         <div className="w-full bg-white">
-            <div className="max-w-[1920px] mx-auto px-[20px] md:px-[40px]">
+            <div className="max-w-[1920px] mx-auto px-[20px] md:px-[60px]">
                 <Disclosure
                     as="nav"
                     className="relative bg-white py-[20px] border-b border-[#DDDDDD] font-outfit"

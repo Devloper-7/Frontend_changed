@@ -17,7 +17,7 @@ function getIsLoggedInFromStorage(): boolean {
 }
 
 const PER_PAGE_MOBILE = 3;
-const PER_PAGE_DESKTOP = 9;
+const PER_PAGE_DESKTOP = 8;
 const DESKTOP_BREAKPOINT_PX = 768;
 
 export type ListingProduct = {
@@ -169,7 +169,7 @@ export default function ProductListing({
 
   return (
     // <section className="w-full px-4 py-10 sm:px-6 md:px-10">
-    <div className="xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto rounded-[20px] pb-[70px] md:pb-[130px] md:px-[50px]">
+    <div className="xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto rounded-[20px] pb-[50px] xl:pb-[70px] px-[40px]">
       {/* Header: count + sort + filter */}
       <div className="mb-[30px] flex flex-col gap-4 border-b border-[#E6E6E6] pb-5 md:mb-[50px] sm:flex-row sm:items-center sm:justify-between">
         <p className="order-2 text-center font-outfit font-light text-[#424242] sm:order-1">
@@ -213,14 +213,14 @@ export default function ProductListing({
       </div>
 
       {/* Product grid - 9 products per page */}
-      <div className="grid grid-cols-1 gap-[30px] md:gap-[75px] sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
         {displayedProducts.map((product) => (
           <ProductCard key={product.id} product={product} isLoggedIn={isLoggedIn} />
         ))}
       </div>
 
       {/* Pagination: < 1 2 3 4 5 ... 10 > */}
-      <div className="mt-[30px] md:mt-[130px] flex flex-wrap items-center justify-center gap-[7px] text-[20px] font-semibold font-jakarta">
+      <div className="mt-[50px] md:mt-[70px] flex flex-wrap items-center justify-center gap-[7px] text-[20px] font-semibold font-jakarta">
         <button
           type="button"
           onClick={() => handlePageChange(page - 1)}

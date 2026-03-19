@@ -153,7 +153,7 @@ const MARKETPLACE_ZIGZAG_COUNT = 4;
 export default function MarketplacePage() {
   return (
     <>
-    <div className="relative px-5 sm:px-10 xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
+    <div className="relative px-[20px] xl:px-[60px] xl:max-w-[1440px] 2xl:max-w-[1920px] mx-auto">
       <ContactHero
         headline={
           <>

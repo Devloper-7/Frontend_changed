@@ -42,7 +42,7 @@ export default function ContactHero({
   }, []);
 
   return (
-    <section className="relative mx-auto md:mx-[40px] rounded-[20px] mt-[20px] mb-[70px] text-center text-white flex flex-col md:right-10 min-h-[647px] xl:max-w-[1440px] 2xl:max-w-[1920px] md:min-h-[449px] w-full overflow-hidden">
+    <section className="relative mx-auto md:mx-[40px] rounded-[20px] mt-[20px] mb-[50px] xl:mb-[70px] text-center text-white flex flex-col md:right-10 min-h-[647px] xl:max-w-[1440px] 2xl:max-w-[1920px] md:min-h-[449px] w-full overflow-hidden">
 
       {/* --- BACKGROUND (Fixed) --- */}
       <div
@@ -55,8 +55,7 @@ export default function ContactHero({
       />
 
       {/* Icon overlay - same animation as Hero.tsx */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes contact-hero-icon-in {
           0%, 100% { opacity: 1; transform: scale(1); }
           50% { opacity: 0.75; transform: scale(0.92); }
@@ -96,8 +95,8 @@ export default function ContactHero({
         <div className="contact-hero-icon-anim absolute flex items-center justify-center" style={{ right: "3%", top: "70%", animationDelay: "0.3s" }}>
           <img src="/gear.png" alt="" />
         </div>
-        {/* Bottom middle: 3 lines with rain-down animation, staggered up→down (right highest, left lowest) */}
-        <div
+         {/* Bottom middle: 3 lines with rain-down animation, staggered up→down (right highest, left lowest) */}
+         <div
           className="contact-hero-rain-lines absolute left-1/2 bottom-0 pointer-events-none flex items-end justify-center gap-14"
           style={{ height: "35%" }}
           aria-hidden
@@ -111,16 +110,16 @@ export default function ContactHero({
       {/* Mobile only: 4 corner icons (tree, truck, boat, bin) in light gray circles */}
       <div className="absolute inset-0 pointer-events-none z-[1] md:hidden" aria-hidden>
         <div className="contact-hero-icon-anim absolute flex items-center justify-center" style={{ left: "16%", top: "9%", animationDelay: "0.1s" }}>
-          <img src="/tree.png" alt="" className="w-10 h-10" />
+          <img src="/tree.png" alt="" className="w-10 h-10"/>
         </div>
         <div className="contact-hero-icon-anim absolute flex items-center justify-center" style={{ right: "15%", top: "4%", animationDelay: "0.15s" }}>
-          <img src="/truck.png" alt="" className="w-10 h-10" />
+          <img src="/truck.png" alt="" className="w-10 h-10"/>
         </div>
         <div className="contact-hero-icon-anim absolute flex items-center justify-center" style={{ left: "18%", top: "79%", animationDelay: "0.25s" }}>
-          <img src="/boat.png" alt="" className="w-10 h-10" />
+          <img src="/boat.png" alt="" className="w-10 h-10"/>
         </div>
         <div className="contact-hero-icon-anim absolute flex items-center justify-center" style={{ right: "18%", top: "87%", animationDelay: "0.3s" }}>
-          <img src="/bin.png" alt="" className="w-10 h-10" />
+          <img src="/bin.png" alt="" className="w-10 h-10"/>
         </div>
         <div
           className="contact-hero-rain-lines absolute left-1/2 bottom-0 pointer-events-none flex items-end justify-center gap-14"
@@ -254,7 +253,7 @@ export default function ContactHero({
 //   children, // <--- 1. We receive the children here
 // }: ContactHeroProps) {
 //   return (
-//     <section className="relative rounded-[20px] mt-[20px] mb-[70px] text-center text-white flex flex-col min-h-[400px] md:min-h-[449px] overflow-hidden">
+//     <section className="relative rounded-[20px] mt-[20px] mb-[70px] sm:mb-[130px] text-center text-white flex flex-col min-h-[400px] md:min-h-[449px] overflow-hidden">
 
 //       {/* --- BACKGROUND (Fixed) --- */}
 //       <div

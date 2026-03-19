@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function CallToAction() {
   return (
     <div className="relative z-20 mx-[20px] md:mx-[40px] -mb-90 md:-mb-30">
-      <div className="bg-[#F7FAF8] rounded-[20px] border border-[#DAE6DC] shadow-2xl py-[30px] md:py-[60px] px-[20px] md:px-[50px] xl:max-w-[1240px] 2xl:max-w-[1360px] sm:mx-auto">
+      <div className="bg-[#F7FAF8] rounded-[20px] border border-[#DAE6DC] shadow-2xl py-[30px] md:py-[60px] px-[20px] md:px-[50px] xl:max-w-[1240px] 2xl:max-w-[1440px] sm:mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
  
           {/* Left: Text */}
